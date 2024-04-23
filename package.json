@@ -1,0 +1,42 @@
+{
+  "name": "21_1-API-books-middlewares",
+  "version": "1.0.0",
+  "description": "API book with middlewares",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "normalize:authors": "node ./normalization/author.normalization.js ",
+    "normalize:books": "node ./normalization/book.normalization.js ",
+    "normalize:all": "node ./normalization/book.normalization.js && node ./normalization/author.normalization.js",
+    "start:watch": "node --watch index.js",
+    "start": "node index.js",
+    "seed:book": "node ./seeds/book.seeds.js",
+    "seed:author": "node ./seeds/author.seeds.js",
+    "seed:books-relations": "node ./seeds/book-relations.seed.js",
+    "seed:all": "npm run seed:author && npm run seed:book && npm run seed:books-relations",
+    "prepare": "husky install",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "api",
+    "book",
+    "middlewares"
+  ],
+  "author": "francesc pallares",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.2.3",
+    "multer": "^1.4.5-lts.1"
+  }
+}
